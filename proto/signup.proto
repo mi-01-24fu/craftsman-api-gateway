@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package signup;
+
+option go_package = "pkg/grpc";
+
+service NewMemberRegistrationService {
+  rpc Signup(SignupRequest) returns (SignupResponse);
+}
+
+message SignupRequest {
+  string UserName = 1;
+  string MailAddress = 2;
+  string Password = 3;
+}
+
+message SignupResponse {
+  string ID = 1;
+  string UserName = 2;
+  string MailAddress = 3;
+}
